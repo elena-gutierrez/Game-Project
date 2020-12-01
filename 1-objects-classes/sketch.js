@@ -3,22 +3,30 @@
 function setup() {
   createCanvas(800, 400);
 
-  // construct the ball using the 'new' keyword
+
 }
 
 
 function draw(){
 	background(220);
- //draw the ball called b (go look in the Ball class for the drawBall function)
- //move the ball called b (go look in the Ball class for the moveBall function)
 
 
 }
 
-
-//ball class from which to create new balls with similar properties.
 class Ball {
-
-  // here is where you'll put the instructions for making balls
-
+  constructor(x,y,color){
+   this.x = 10;
+       this.y = 10;
+          this.color = 'blue';
+          this.outline= 'orange';
+   }
+   drawBall(){
+       	   stroke(0);
+       	   fill(this.color);
+            ellipse(this.x,this.y,10,10);
+   	}
+   moveBall(){
+   	   this.x = this.x+2;
+   	   this.y = this.y+.5;
+   	}
 }
