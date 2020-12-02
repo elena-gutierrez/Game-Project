@@ -14,13 +14,13 @@ function setup() {
 }
 
 function draw(){
-	background(220);
+	background(0);
 
   me.drawMe();
   me.moveMe();
 
   if (frameCount % 25 == 0) {
-      let  b = new Ball(width, random(0,height), -3);
+      let  b = new Ball(width, random(0,height), -1);
       balls.push(b);
       console.log(balls); //print the balls array to the console
     }
@@ -44,9 +44,9 @@ class Avatar {
 	}
 
 	drawMe(){  // draw the running person
-    		stroke("green");
-        strokeWeight(3);
-    		fill("blue");
+    		stroke("blue");
+        strokeWeight(2);
+    		fill("white");
 		    ellipse(this.x,this.y,20,20);
         line(this.x,this.y, this.x, this.y+40);
         line(this.x, this.y+40, this.x-20, this.y+60);
@@ -63,6 +63,8 @@ class Avatar {
 
     if (keyIsDown(DOWN_ARROW)) { // if you hold the down arrow, move down by speed
         this.y += this.speed;
+    if(keyIsDown(RIGHT_ARROW)){this.y-= this.speed}
+    if(keyIsDown(LEFT_ARROW)){this.y+= this.speed}
     }
 	}
 
